@@ -1,0 +1,37 @@
+egg 路由
+eg:
+    定义路由规则
+    {app_root}/app/router.js
+    module.export = app =>{
+        const { router ,controller } = app
+        router.get('/user/:id',controller.user.index)
+    }
+    router.verb
+    verb 支持restful架构
+    *如果一个架构符合REST原则，就称它为RESTful架构
+    *REST，即Representational State Transfer(表现层状态转化)的缩写
+    *其中的表现层指代的是资源的表现层，资源在网路中指代这一个实体，就是在网络中的一个信息，可以用一个URI（统一资源定位符）
+    来指代这个资源，找到这个URI就能找到这个资源
+    *而我们将资源表现出来的方式就称为表现层
+    *状态转化：客户端在与服务器交互的过程就必然有数据和状态的变化，http是一个无状态协议，客户想要操作服务器，就必须通过某种
+    手段，让服务器端发生状态转化，这种转化是建立在表现层之上的，也就是表现成状态转化
+    *客户端用到的手段只能是http协议（GET、POST、PUT、DELETE）分别代表获取资源，新建资源，更新资源，删除资源
+    在对应的控制器，对应方法中执行
+    class UserController extend Controller{
+        async index(){
+            console.log(this.ctx.params.id)
+            this.ctx: 当前请求的上下文 Context 对象的实例，通过它我们可以拿到框架封装好的处理当前请求的各种便捷属性和方法。
+            this.app: 当前应用 Application 对象的实例，通过它我们可以拿到框架提供的全局对象和方法。
+            this.service：应用定义的 Service，通过它我们可以访问到抽象出的业务层，等价于 this.ctx.service 。
+            this.config：应用运行时的配置项。
+        }
+    }
+
+
+    egg 中模版的使用 
+    npm i egg-view-ejs --save
+    {app_root}/config/plugin.js
+    exports.ejs={
+        enable:true,
+        package:'egg-view-ejs'
+    }
