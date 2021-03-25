@@ -1,0 +1,39 @@
+项目目录介绍
+>>>>>>>>dir
+app 项目开发目录
+config 项目配置文件
+logs 日志文件
+run 运行配置文件
+test 测试文件
+
+egg 项目目录约束规范
+ eggProjectName
+    package.json
+    app.js (可选)
+    agent.js （可选）
+    app(dir)
+        router.js
+        controller (dir)
+            home.js
+            ...
+        service.js (dir)(可选)
+        middleware (dir)(可选)
+            ...js
+        schedule   (dir)(可选)
+            。。。js
+        public     (dir)(可选)
+            staticFile
+        view       (dir)(可选)
+            ...html
+        extent     (dir)(可选)
+            ...js
+    config(dir)
+        plugin.js
+        config.default.js
+        config.prod.js
+
+
+
+
+        view <-->controller--->service(schedule定时任务)--->model
+        controller --->router(extend)--->middleware--->public
