@@ -1,0 +1,5 @@
+1.egg是一个基于node和koa的开发框架
+2.egg的安装
+npm i egg-init -g 
+egg-init eggProjectName --type=simple
+3.项目运行 npm run dev 默认端口7001
